@@ -9,6 +9,21 @@
     "sessions" : {
         "nbWeeks" : 12,
         "weeks" : [
+            {
+                "numWeek":1,
+                "sessions": [
+                    {
+                        "date" : "2019-02-03T09:00:00.000Z",
+                        "name" : "Go go go ! ",
+                        "type" : "fractionné",
+                        "distance" : 8.6,
+                        "time" : "00:00:00",
+                        "heightDifference" : 230,
+                        "circuit" : "boel 18K",
+                        "details" : "90% VMA sur 20min"
+                    }
+                ]
+            }
 
         ]
     }
