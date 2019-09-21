@@ -1,5 +1,5 @@
 # mycoach
-Just an little application to help to organize and improve runner training sessions
+Application pour aider le "runner" dans ses plans de préparation.
 
 ## Fonctionnalités
 ----------------- 
@@ -36,6 +36,17 @@ V1.2.0
 - [] pouvoir partagé le plan avec ses amis
 - [] collaborer avec ses amis
 - [] à l'aide de la description, générer un entrainement Garmin
+
+## Technologies
+### frontend
+- vuejs
+
+### backend
+- NestJS (todo)
+
+### database
+- NoSQL (todo)
+
 
 ## Les données
 
