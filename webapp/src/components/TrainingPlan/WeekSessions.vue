@@ -4,13 +4,17 @@
     <b-list-group flush>
       <b-table striped hover :fields="fields" :items="sessions"></b-table>
     </b-list-group>
-     <b-button  type="submit">Add session</b-button>
+    <AddSession v-bind:week=numWeek></AddSession>
   </b-card>
 </template>
 
 <script>
+import AddSession from './AddSession';
 export default {
     name : 'WeekSessions',
+    components : {
+      AddSession
+    },
     props: {
         numWeek: Number,
         sessions: Array
