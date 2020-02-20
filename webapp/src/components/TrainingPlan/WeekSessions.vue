@@ -4,12 +4,13 @@
     <b-list-group flush>
       <b-table striped hover :fields="fields" :items="sessions"></b-table>
     </b-list-group>
-    <AddSession v-bind:week=numWeek></AddSession>
+    <AddSession v-bind:week=numWeek @newSession="newSession"></AddSession>
   </b-card>
 </template>
 
 <script>
 import AddSession from './AddSession';
+import TrainingPlanService from '../../services/traininplan';
 export default {
     name : 'WeekSessions',
     components : {
@@ -46,7 +47,8 @@ export default {
          return sessions.map(session => session.distance).reduce((a,b) => {
            return a + b
            }, 0);
-       }
+       },
+       newSession: (value) => { console.log(value); new TrainingPlanService().sendRequest(); }
     }
 }
 

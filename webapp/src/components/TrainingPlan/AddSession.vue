@@ -69,20 +69,21 @@ export default {
     methods : {
     onSubmit(evt) {
         evt.preventDefault()
-        alert(JSON.stringify(this.form))
+        this.$emit('newSession', this.form);
+        //alert(JSON.stringify(this.form))
       },
       onReset(evt) {
         evt.preventDefault()
         // Reset our form values
-        this.form.email = ''
-        this.form.name = ''
-        this.form.food = null
-        this.form.checked = []
-        // Trick to reset/clear native browser form validation state
-        this.show = false
-        this.$nextTick(() => {
-          this.show = true
-        })
+        // this.form.email = ''
+        // this.form.name = ''
+        // this.form.food = null
+        // this.form.checked = []
+        // // Trick to reset/clear native browser form validation state
+        // this.show = false
+        // this.$nextTick(() => {
+        //   this.show = true
+        // })
       }
     }
 }
