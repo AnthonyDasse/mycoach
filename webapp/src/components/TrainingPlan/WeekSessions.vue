@@ -48,7 +48,7 @@ export default {
            return a + b
            }, 0);
        },
-       newSession: (value) => { console.log(value); new TrainingPlanService().sendRequest(); }
+       newSession: () => {new TrainingPlanService().sendRequest(); }
     }
 }
 

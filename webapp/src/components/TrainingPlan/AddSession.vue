@@ -70,7 +70,6 @@ export default {
     onSubmit(evt) {
         evt.preventDefault()
         this.$emit('newSession', this.form);
-        //alert(JSON.stringify(this.form))
       },
       onReset(evt) {
         evt.preventDefault()
