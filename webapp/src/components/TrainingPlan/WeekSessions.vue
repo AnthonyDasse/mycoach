@@ -10,7 +10,6 @@
 
 <script>
 import AddSession from './AddSession';
-import TrainingPlanService from '../../services/traininplan';
 export default {
     name : 'WeekSessions',
     components : {
@@ -48,7 +47,7 @@ export default {
            return a + b
            }, 0);
        },
-       newSession: () => {new TrainingPlanService().sendRequest(); }
+       newSession: () => {}
     }
 }
 
