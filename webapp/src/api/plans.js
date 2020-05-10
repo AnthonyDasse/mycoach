@@ -75,5 +75,8 @@ export default {
     },
     addSession(weekId,newSession, cb){
         setTimeout(() => cb(newSession), 100)
+    },
+    updatePlan(id, plan, cb){
+        setTimeout(() => cb(plan), 100)
     }
 }

@@ -53,8 +53,16 @@ export default {
     },
     methods: {
         onSubmit(evt) {
-            evt.preventDefault();        
+            evt.preventDefault();
+            let newPlan = {... this.plan};
             
+            newPlan.name = this.form.name;
+            newPlan.competition.date = this.form.competition.date;
+            newPlan.competition.name = this.form.competition.name;
+            newPlan.competition.distance = this.form.competition.distance;
+
+            this.$store.dispatch('plans/updatePlan', { planId : this.plan.id, plan: newPlan });       
+            this.$bvModal.hide('modal-edit')
         },
         onReset(evt) {
             evt.preventDefault()
