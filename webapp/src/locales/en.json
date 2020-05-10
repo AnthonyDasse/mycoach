@@ -1,0 +1,40 @@
+{
+  "header": {
+    "title": "MyCoach",
+    "plans": "Your plans"
+  },
+  "training": {
+    "listTitle": "Your plans",
+    "listDistanceHeader": "Distance",
+    "title": "Training Plan"
+  },
+  "session": {
+    "createTitle": "Add sessions to week number : ",
+    "openModalButton": "Add sessions",
+    "formLabelDate": "Date :",
+    "formLabelTime": "Time :",
+    "formLabelName": "Name :",
+    "formLabelType": "Type :",
+    "formLabelDuration": "Duration :",
+    "fromDescriptionDuration": "to format : HH:MM:SS",
+    "formLabelDistance": "Distance :",
+    "formDescriptionDistance": "KM 00.0 (ex : 12.4 or 9.0)",
+    "formLabelHeightDifference": "Height Difference :",
+    "formLabelCircuit": "Circuit :",
+    "formLabelDetails": "Details :",
+    "formSubmitButton": "Create !",
+    "formResetButton": " Reset",
+    "createModalFooterText": "Add many session on this week",
+    "tableDate": "Date",
+    "tableTime": "Time",
+    "tableName": "Name",
+    "tableType": "Type",
+    "tableDuration": "Duration",
+    "tableHeightDifference": "↗️ D+",
+    "tableCircuit": "Circuit",
+    "tableDetails": "Details"
+  },
+  "week": {
+    "resume": "Week  {numWeek} ( Total distance: {distance} KM)"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "header": {
+    "title": "MyCoach",
+    "plans": "Vos plans d'entrainement"
+  },
+  "training": {
+    "listTitle": "Vos plan",
+    "listDistanceHeader": "Distance",
+    "title": "Plan d'entrainement"
+  },
+  "session": {
+    "createTitle": "Créer des sessions pour la semaine numéro : ",
+    "openModalButton": "Créer des sessions",
+    "formLabelDate": "Date :",
+    "formLabelTime": "Time :",
+    "formLabelName": "Name :",
+    "formLabelType": "Type :",
+    "formLabelDuration": "Durée :",
+    "fromDescriptionDuration": "au format : HH:MM:SS",
+    "formLabelDistance": "Distance :",
+    "formDescriptionDistance": "KM 00.0 (ex : 12.4 or 9.0)",
+    "formLabelHeightDifference": "Dénivelé positif :",
+    "formLabelCircuit": "Circuit :",
+    "formLabelDetails": "Details :",
+    "formSubmitButton": "Créer !",
+    "formResetButton": " Annuler",
+    "createModalFooterText": "Vous pouvez ajouter autant de sessions dans une semaine",
+    "tableDate": "Date",
+    "tableTime": "Time",
+    "tableName": "Name",
+    "tableType": "Type",
+    "tableDuration": "Durée",
+    "tableHeightDifference": "↗️ D+",
+    "tableCircuit": "Circuit",
+    "tableDetails": "Details"
+  },
+  "week": {
+    "resume": "Semaine  {numWeek} ( Distance totale: {distance} KM)"
+  }
+}

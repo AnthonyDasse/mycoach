@@ -47,7 +47,7 @@ const mutations = {
   
   addSession(state, data) {    
     let currentWeek = state.currentPlan.weeks.find(week => week.numWeek == data.weekId )
-    currentWeek.sessions.push(data.session.circuit);
+    currentWeek.sessions.push(data.session);
   }
 }
 
