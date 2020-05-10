@@ -1,47 +1,56 @@
 <template>
   <div>
-  <b-button v-b-modal="'modal-'+week">Add session</b-button>
+  <b-button v-b-modal="'modal-'+week">Add sessions</b-button>
 
-  <b-modal v-bind:id="'modal-'+week" v-bind:title="'Add session to Week '+ week" size="xl">
+  <b-modal v-bind:id="'modal-'+week" v-bind:title="'Add sessions to Week '+ week" 
+  size="xl" ok-title="Done" cancel-title="Back"  >
   <div>
     <b-form @submit="onSubmit" @reset="onReset">        
 
         <b-form-group id="input-date" label="Date:" label-for="input-date" >
-            <b-form-input id="input-date" v-model="form.date" placeholder="2019-02-06T09:00:00.000Z"></b-form-input>
-        </b-form-group>
-
-        <b-form-group id="input-name" label="Name :" label-for="input-name" >
-            <b-form-input id="input-name" v-model="form.name" placeholder="Jane Doe"></b-form-input>
-        </b-form-group>
-
-        <b-form-group id="input-type" label="Type:" label-for="input-type" >
-            <b-form-input id="input-type" v-model="form.type" placeholder="fractionné"></b-form-input>
+            <b-form-input id="input-date" v-model="form.date" type="date" required></b-form-input>
         </b-form-group>
 
         <b-form-group id="input-time" label="Time:" label-for="input-time" >
-            <b-form-input id="input-time" v-model="form.time" placeholder="00:45:00"></b-form-input>
+            <b-form-input id="input-time" v-model="form.time" type="datetime-local" required></b-form-input>
         </b-form-group>
 
-        <b-form-group id="input-distance" label="Distance:" label-for="input-distance" >
-            <b-form-input id="input-distance" v-model="form.distance" placeholder="12"></b-form-input>
+        <b-form-group id="input-name" label="Name :" label-for="input-name" >
+            <b-form-input id="input-name" v-model="form.name" placeholder="Jane Doe" type="text" maxlength="50" required></b-form-input>
         </b-form-group>
 
-        <b-form-group id="input-heightDifference" label="heightDifference:" label-for="input-heightDifference" >
-            <b-form-input id="input-heightDifference" v-model="form.heightDifference" placeholder="120"></b-form-input>
+        <b-form-group id="input-type" label="Type:" label-for="input-type" >
+            <b-form-input id="input-type" v-model="form.type" placeholder="fractionné" type="text" maxlength="50" required></b-form-input>
+        </b-form-group>
+
+        <b-form-group id="input-duration" label="Duration:"  description="to format : HH:MM:SS" label-for="input-duration" >
+            <b-form-input id="input-duration" v-model="form.duration" pattern="[0-9]{2}[:][0-9]{2}[:][0-9]{2}" placeholder="00:45:00" required></b-form-input>
+        </b-form-group>
+
+        <b-form-group id="input-distance" label="Distance:" description="KM 00,0 (ex : 12,4 or 9,0)" label-for="input-distance" >
+            <b-form-input id="input-distance" v-model="form.distance" placeholder="12" type="text" pattern="^[0-9]+[,][0-9]*" required></b-form-input>
+        </b-form-group>
+
+        <b-form-group id="input-heightDifference" label="Height Difference:" label-for="input-heightDifference" >
+            <b-form-input id="input-heightDifference" v-model="form.heightDifference" type="number" min="0" placeholder="120"></b-form-input>
         </b-form-group>
 
         <b-form-group id="input-circuit" label="Circuit:" label-for="input-circuit" >
-            <b-form-input id="input-circuit" v-model="form.circuit" placeholder="circuit du boel"></b-form-input>
+            <b-form-input id="input-circuit" v-model="form.circuit" type="text" maxlength="50" placeholder="circuit du boel"></b-form-input>
         </b-form-group>
         
         <b-form-group id="input-details" label="Details:" label-for="input-details" >
-            <b-form-input id="input-details" v-model="form.details" placeholder="tranquille dans les côtes"></b-form-input>
+            <b-form-input id="input-details" v-model="form.details" type="text" maxlength="500" placeholder="tranquille dans les côtes"></b-form-input>
         </b-form-group>
 
         <b-button type="submit" variant="primary">Submit</b-button>
         <b-button type="reset" variant="danger">Reset</b-button>
+        
     </b-form>
   </div>
+    <template v-slot:modal-footer="">
+            Add many session on this week
+    </template>
   </b-modal>
 </div>
 
@@ -68,8 +77,12 @@ export default {
     },
     methods : {
     onSubmit(evt) {
-        evt.preventDefault()
-        this.$emit('newSession', this.form);
+        evt.preventDefault();        
+        let newSession = {... this.form};
+
+        // eslint-disable-next-line no-console
+        console.log('psss', this.form.date);
+        this.$store.commit('plans/addSession', { weekId : this.week, session: newSession });       
       },
       onReset(evt) {
         evt.preventDefault()

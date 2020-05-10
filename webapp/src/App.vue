@@ -10,7 +10,6 @@
 <script>
 import Menu from './components/Header/Menu.vue'
 
-
 export default {
   name: 'app',
   components: {
