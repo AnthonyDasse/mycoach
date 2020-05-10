@@ -6,7 +6,12 @@
   "training": {
     "listTitle": "Vos plan",
     "listDistanceHeader": "Distance",
-    "title": "Plan d'entrainement"
+    "title": "Plan d'entrainement",
+    "planHeaderDescription" : "Plan d'entrainement pour '{competition}', date de la compétition : {dueDate}.",
+    "updatePlan" : "Modifier",
+    "editTitle" : "Mise à jours des informations du plan",
+    "formSubmitUpdateButton": "Mise à jour",
+    "editModalFooterText" : ""
   },
   "session": {
     "createTitle": "Créer des sessions pour la semaine numéro : ",

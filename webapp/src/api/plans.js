@@ -3,7 +3,7 @@
  */
 const _plans = [
     {
-        id: 1, name: 'Glazig 2019', competition: { name: 'Glazig 2019', distance: 28, date: '2019-02-03T09:00:00.000Z' },
+        id: 1, name: 'Glazig 2019', competition: { name: 'Glazig 2019', distance: "28.0", date: '2021-02-03' },
         weeks: [
             {
                 numWeek: 1,
