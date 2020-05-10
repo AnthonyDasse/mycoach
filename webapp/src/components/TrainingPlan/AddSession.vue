@@ -2,7 +2,8 @@
   <div>
   <b-button v-b-modal="'modal-'+week">Add sessions</b-button>
 
-  <b-modal v-bind:id="'modal-'+week" v-bind:title="'Add sessions to Week '+ week" size="xl">
+  <b-modal v-bind:id="'modal-'+week" v-bind:title="'Add sessions to Week '+ week" 
+  size="xl" ok-title="Done" cancel-title="Back"  >
   <div>
     <b-form @submit="onSubmit" @reset="onReset">        
 
@@ -22,12 +23,12 @@
             <b-form-input id="input-type" v-model="form.type" placeholder="fractionné" type="text" maxlength="50" required></b-form-input>
         </b-form-group>
 
-        <b-form-group id="input-duration" label="Duration:" label-for="input-duration" >
-            <b-form-input id="input-duration" v-model="form.duration"  pattern="[0-9]{2}[:][0-9]{2}[:][0-9]{2}" placeholder="00:45:00" required></b-form-input>
+        <b-form-group id="input-duration" label="Duration:"  description="to format : HH:MM:SS" label-for="input-duration" >
+            <b-form-input id="input-duration" v-model="form.duration" pattern="[0-9]{2}[:][0-9]{2}[:][0-9]{2}" placeholder="00:45:00" required></b-form-input>
         </b-form-group>
 
-        <b-form-group id="input-distance" label="Distance:" label-for="input-distance" >
-            <b-form-input id="input-distance" v-model="form.distance" placeholder="12" type="number" min="0" required></b-form-input>
+        <b-form-group id="input-distance" label="Distance:" description="KM 00,0 (ex : 12,4 or 9,0)" label-for="input-distance" >
+            <b-form-input id="input-distance" v-model="form.distance" placeholder="12" type="text" pattern="^[0-9]+[,][0-9]*" required></b-form-input>
         </b-form-group>
 
         <b-form-group id="input-heightDifference" label="Height Difference:" label-for="input-heightDifference" >
@@ -44,8 +45,12 @@
 
         <b-button type="submit" variant="primary">Submit</b-button>
         <b-button type="reset" variant="danger">Reset</b-button>
+        
     </b-form>
   </div>
+    <template v-slot:modal-footer="">
+            Add many session on this week
+    </template>
   </b-modal>
 </div>
 
