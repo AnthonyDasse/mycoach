@@ -1,6 +1,6 @@
 <template>
     <div class="trainingplaneheader">       
-        <h1>Training plan {{ planId }}</h1>
+        <h1>{{ $t("training.title") }} : {{ plan.name }}</h1>
     </div>
 </template>
 
@@ -10,9 +10,7 @@
     name: 'TrainingPlanHeader',
     components : {
     },
-    props: {
-        planId: String
-    }
+    props: ["plan"]
   }
 
 </script>

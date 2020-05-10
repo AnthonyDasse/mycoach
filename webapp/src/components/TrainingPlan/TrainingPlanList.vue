@@ -1,10 +1,10 @@
 <template>
     <div class="trainingplan">       
-        <h1>{{ welcomeMessage }}</h1>
+        <h2>{{ $t("training.listTitle") }} </h2>
         <b-list-group>
           <b-list-group-item v-for="plan in plans" v-bind:key="plan.id" button >
             <b-link v-bind:to="'/plan/'+plan.id">
-              {{ plan.name }} ( distance : {{ plan.competition.distance}})
+              {{ plan.name }} ( {{ $t("training.listDistanceHeader") }} : {{ plan.competition.distance}} KM)
             </b-link>
           </b-list-group-item>          
         </b-list-group>
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState } from 'vuex';
 export default {
   name: 'TrainingPlanList',
   computed: mapState({
@@ -21,12 +21,7 @@ export default {
   props: {
     msg: String
   },
-  data: function(){
-    return  {
-        welcomeMessage : 'Hello champion, yours plans ...'
-    }
-  },
-  created () {
+  created () {    
     this.$store.dispatch('plans/getAllPlans')
   }
 }
