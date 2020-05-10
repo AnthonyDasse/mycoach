@@ -1,9 +1,7 @@
 <template>
     <div class="trainingplan">  
         <TraininPlanHeader v-bind:planId=$route.params.id></TraininPlanHeader>
-
-        <!-- Training plan Header -->
-
+        
         <!-- Sessions -->
         <WeekSessions v-for="week in plan.weeks" :key="week.numWeek" v-bind:numWeek="week.numWeek" v-bind:sessions="week.sessions"></WeekSessions>
 

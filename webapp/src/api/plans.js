@@ -68,5 +68,8 @@ export default {
     },
     getPlanById(id, cb) { 
         setTimeout(() => cb(_plans.find(p => p.id == id)), 100)
+    },
+    addSession(weekId,newSession, cb){
+        setTimeout(() => cb(newSession), 100)
     }
 }
