@@ -3,7 +3,7 @@
         <h1>{{ welcomeMessage }}</h1>
         <b-list-group>
           <b-list-group-item v-for="plan in plans" v-bind:key="plan.id" button >
-            <b-link to="/plan/1">
+            <b-link v-bind:to="'/plan/'+plan.id">
               {{ plan.name }} ( distance : {{ plan.competition.distance}})
             </b-link>
           </b-list-group-item>          
