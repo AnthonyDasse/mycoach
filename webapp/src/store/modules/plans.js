@@ -31,10 +31,13 @@ const actions = {
       commit('addSession', { ...data.weekId, ...session })
     })
   },
-    updatePlan({commit}, data) {      
+  updatePlan({commit}, data) {      
       plansApi.updatePlan(data.planId, data.plan, plan => {       
         commit('setCurrentPlan', plan)
       })
+  },
+  addEmptyWeek({commit}){
+    commit('addEmptyWeek')
   }
 
 }
@@ -51,6 +54,21 @@ const mutations = {
   addSession(state, data) {    
     let currentWeek = state.currentPlan.weeks.find(week => week.numWeek == data.weekId )
     currentWeek.sessions.push(data.session);
+  },
+
+  addEmptyWeek(state) {
+    let newNumWeek = 1;
+    
+    if(state.currentPlan.weeks != null && state.currentPlan.weeks.length > 0){
+      let lastNumWeek = state.currentPlan.weeks.map(w => w.numWeek).sort().pop();
+      newNumWeek = parseInt(lastNumWeek) +1 ;
+    }
+    
+    state.currentPlan.weeks.push({
+      numWeek: newNumWeek,
+      sessions: []
+    });
+   
   }
 }
 

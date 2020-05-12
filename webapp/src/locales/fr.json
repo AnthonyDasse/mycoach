@@ -11,7 +11,9 @@
     "updatePlan" : "Modifier",
     "editTitle" : "Mise à jours des informations du plan",
     "formSubmitUpdateButton": "Mise à jour",
-    "editModalFooterText" : ""
+    "editModalFooterText" : "",
+    "formLabelCompetitionName": "Compétition :",
+    "formLabelCompetitionLocation": "Lieu :"
   },
   "session": {
     "createTitle": "Créer des sessions pour la semaine numéro : ",
@@ -24,7 +26,7 @@
     "fromDescriptionDuration": "au format : HH:MM:SS",
     "formLabelDistance": "Distance :",
     "formDescriptionDistance": "KM 00.0 (ex : 12.4 or 9.0)",
-    "formLabelHeightDifference": "Dénivelé positif :",
+    "formLabelElevation": "Dénivelé positif :",
     "formLabelCircuit": "Circuit :",
     "formLabelDetails": "Details :",
     "formSubmitButton": "Créer !",
@@ -35,11 +37,12 @@
     "tableName": "Name",
     "tableType": "Type",
     "tableDuration": "Durée",
-    "tableHeightDifference": "↗️ D+",
+    "tableElevation": "↗️ D+",
     "tableCircuit": "Circuit",
     "tableDetails": "Details"
   },
   "week": {
-    "resume": "Semaine  {numWeek} ( Distance totale: {distance} KM)"
+    "resume": "Semaine  {numWeek} ( Distance totale: {distance} KM - Dénivelé positif total : {elevation} m)",
+    "addWeekButton": "Rajouter une semaine d'entrainement"
   }
 }

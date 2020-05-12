@@ -8,19 +8,23 @@
             <b-form @reset="onReset" @submit="onSubmit">
 
                 <b-form-group id="input-name" v-bind:label="this.$t('session.formLabelName')"  label-for="input-name" >
-                    <b-form-input id="input-name" v-model="form.name" placeholder="Jane Doe" type="text" maxlength="50" required></b-form-input>
+                    <b-form-input id="input-name" v-model="form.name" placeholder="" type="text" maxlength="50" required></b-form-input>
                 </b-form-group>
 
                 <b-form-group id="input-date" v-bind:label="this.$t('session.formLabelDate')" label-for="input-date" >
                     <b-form-input id="input-date" v-model="form.competition.date" type="date" required></b-form-input>
                 </b-form-group>
 
-                <b-form-group id="input-compet-name" v-bind:label="'competition name'"  label-for="input-compet-name" >
-                    <b-form-input id="input-compet-name" v-model="form.competition.name" placeholder="Jane Doe" type="text" maxlength="50" required></b-form-input>
+                <b-form-group id="input-compet-name" v-bind:label="this.$t('training.formLabelCompetitionName')"  label-for="input-compet-name" >
+                    <b-form-input id="input-compet-name" v-model="form.competition.name" placeholder="" type="text" maxlength="50" required></b-form-input>
                 </b-form-group>
 
                 <b-form-group id="input-distance" v-bind:label="this.$t('session.formLabelDistance')"  v-bind:description="this.$t('session.formDescriptionDistance') " label-for="input-distance" >
                     <b-form-input id="input-distance" v-model="form.competition.distance" placeholder="12" type="text" pattern="^[0-9]+[.][0-9]*" required></b-form-input>
+                </b-form-group>
+
+                <b-form-group id="input-compet-location" v-bind:label="this.$t('training.formLabelCompetitionLocation')"  label-for="input-compet-location" >
+                    <b-form-input id="input-compet-location" v-model="form.competition.location" placeholder="" type="text" maxlength="250" ></b-form-input>
                 </b-form-group>
 
 
@@ -46,7 +50,8 @@ export default {
             competition : {
                 date : this.plan.competition.date,
                 name : this.plan.competition.name,
-                distance : this.plan.competition.distance
+                distance : this.plan.competition.distance,
+                location : this.plan.competition.location
             }
         }
       }
@@ -60,7 +65,7 @@ export default {
             newPlan.competition.date = this.form.competition.date;
             newPlan.competition.name = this.form.competition.name;
             newPlan.competition.distance = this.form.competition.distance;
-
+            newPlan.competition.location = this.form.competition.location
             this.$store.dispatch('plans/updatePlan', { planId : this.plan.id, plan: newPlan });       
             this.$bvModal.hide('modal-edit')
         },
@@ -70,6 +75,7 @@ export default {
             this.form.competition.date = this.plan.competition.date;
             this.form.competition.name = this.plan.competition.name;
             this.form.competition.distance = this.plan.competition.distance;
+            this.form.competition.location = this.plan.competition.location;
         }
     }
 }

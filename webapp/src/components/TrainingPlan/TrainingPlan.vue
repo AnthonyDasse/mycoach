@@ -3,19 +3,22 @@
         <TraininPlanHeader v-bind:plan="plan"></TraininPlanHeader>
         <!-- Sessions -->
         <WeekSessions v-for="week in plan.weeks" :key="week.numWeek" v-bind:numWeek="week.numWeek" v-bind:sessions="week.sessions"></WeekSessions>
-
+        <AddWeek/>
     </div>    
 </template>
 
 <script>
 import TraininPlanHeader from './TrainingPlanHeader';
 import WeekSessions from './WeekSessions';
+import AddWeek from './AddWeek';
+
 import { mapState } from 'vuex'
 export default {
     name: 'TrainingPlan',
     components : {
         TraininPlanHeader,
-        WeekSessions
+        WeekSessions,
+        AddWeek
     },
     computed: mapState({
         plan: state => {
@@ -27,3 +30,8 @@ export default {
     }
 }
 </script>
+<style>
+.trainingplan{
+    margin-bottom: 5%;
+}
+</style>
