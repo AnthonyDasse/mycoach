@@ -1,7 +1,10 @@
 name: Webapp CI
 
-on: [push]
-
+on:
+  push:
+    paths:
+    - 'webapp/**'
+    
 jobs:
   build:
     runs-on: ubuntu-latest
