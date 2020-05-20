@@ -4,9 +4,7 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [10.x, 12.x, 14.x]
@@ -22,7 +20,7 @@ jobs:
         cd webapp
         npm install
         npm run build --if-present
-        npm lint
-        npm test:unit
+        npm run lint
+        npm run test:unit
       env:
         CI: true
