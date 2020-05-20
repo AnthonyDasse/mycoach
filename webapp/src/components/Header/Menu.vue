@@ -23,9 +23,6 @@
 import Locale from './Locale';
 export default {
   name: 'Menu',
-  props: {
-    msg: String
-  },
   components : {
         Locale
     }

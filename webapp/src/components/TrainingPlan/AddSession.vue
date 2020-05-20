@@ -1,6 +1,6 @@
 <template>
   <div>
-  <b-button v-b-modal="'modal-'+week">{{$t('session.openModalButton')}}</b-button>
+  <b-button block size="sm" v-b-modal="'modal-'+week">{{$t('session.openModalButton')}}</b-button>
 
   <b-modal v-bind:id="'modal-'+week" v-bind:title="this.$t('session.createTitle')+ week" 
   size="xl" ok-title="Done" cancel-title="Back"  >
@@ -31,8 +31,8 @@
             <b-form-input id="input-distance" v-model="form.distance" placeholder="12" type="text" pattern="^[0-9]+[.][0-9]*" required></b-form-input>
         </b-form-group>
 
-        <b-form-group id="input-heightDifference" v-bind:label="this.$t('session.formLabelHeightDifference')"  label-for="input-heightDifference" >
-            <b-form-input id="input-heightDifference" v-model="form.heightDifference" type="number" min="0" placeholder="120"></b-form-input>
+        <b-form-group id="input-elevation" v-bind:label="this.$t('session.formLabelElevation')"  label-for="input-elevation" >
+            <b-form-input id="input-elevation" v-model="form.elevation" type="number" min="0" placeholder="120"></b-form-input>
         </b-form-group>
 
         <b-form-group id="input-circuit" v-bind:label="this.$t('session.formLabelCircuit')" label-for="input-circuit" >
@@ -70,7 +70,7 @@ export default {
             type : "",
             distance : "0.00",
             duration : "00:00:00",
-            heightDifference : 0,
+            elevation : 0,
             circuit : "",
             details : ""
         }
@@ -90,7 +90,7 @@ export default {
              this.form.type = "";
              this.form.distance = "0.00";
              this.form.duration = "00:00:00";
-             this.form.heightDifference = 0;
+             this.form.elevation = 0;
              this.form.circuit = "";
              this.form.details = "";
       }

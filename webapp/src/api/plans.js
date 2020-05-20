@@ -3,7 +3,7 @@
  */
 const _plans = [
     {
-        id: 1, name: 'Glazig 2019', competition: { name: 'Glazig 2019', distance: 28, date: '2019-02-03T09:00:00.000Z' },
+        id: 1, name: 'Glazig 2019', competition: { name: 'Glazig 2019', distance: "28.0", date: '2021-02-03', location: 'Noyal Chatillon Sur Seiche' },
         weeks: [
             {
                 numWeek: 1,
@@ -15,7 +15,7 @@ const _plans = [
                         type: "fractionné",
                         distance: "12.5",
                         duration: "00:00:00",
-                        heightDifference: 230,
+                        elevation: 230,
                         circuit: "boel 18K",
                         details: "90% VMA sur 20min"
                     },
@@ -26,7 +26,7 @@ const _plans = [
                         type: "sortie longue",
                         distance: 18,
                         duration: "00:00:00",
-                        heightDifference: 230,
+                        elevation: 230,
                         circuit: "boel 18K",
                         details: "90% VMA sur 20min"
                     }
@@ -42,7 +42,7 @@ const _plans = [
                         type: "fractionné",
                         distance: 10,
                         duration: "00:00:00",
-                        heightDifference: 230,
+                        elevation: 230,
                         circuit: "boel 18K",
                         details: "90% VMA sur 20min"
                     },
@@ -53,7 +53,7 @@ const _plans = [
                         type: "sortie longue",
                         distance: 18.6,
                         duration: "00:00:00",
-                        heightDifference: 230,
+                        elevation: 230,
                         circuit: "boel 18K",
                         details: "90% VMA sur 20min"
                     }
@@ -75,5 +75,12 @@ export default {
     },
     addSession(weekId,newSession, cb){
         setTimeout(() => cb(newSession), 100)
+    },
+    updatePlan(id, plan, cb){
+        setTimeout(() => cb(plan), 100)
+    },
+    createPlan(plan, cb){
+        _plans.push(plan);
+        setTimeout(() => cb(_plans), 100)
     }
 }

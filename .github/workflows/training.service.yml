@@ -1,10 +1,10 @@
-name: Webapp CI
+name: Training Service CI
 
 on:
   push:
     paths:
-    - 'webapp/**'
-    
+    - 'training.service/**'
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,10 +20,10 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: npm install, build, and test
       run: |
-        cd webapp
+        cd training.service
         npm install
-        npm run build --if-present
+        npm run build
         npm run lint
-        npm run test:unit
+        npm run test
       env:
         CI: true
