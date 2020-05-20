@@ -8,7 +8,7 @@
 export default {
     methods:{
         addWeek: function(){
-            this.$store.dispatch('plans/addEmptyWeek');  
+            this.$store.dispatch('plans/addEmptyWeek');
         }
     }
 }

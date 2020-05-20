@@ -13,7 +13,9 @@
     "formSubmitUpdateButton": "Mise à jour",
     "editModalFooterText" : "",
     "formLabelCompetitionName": "Compétition :",
-    "formLabelCompetitionLocation": "Lieu :"
+    "formLabelCompetitionLocation": "Lieu :",
+    "modalCreateTitle": "Créer ton plan d'entrainement",
+    "createButtonText": "Créer ! "
   },
   "session": {
     "createTitle": "Créer des sessions pour la semaine numéro : ",

@@ -78,5 +78,9 @@ export default {
     },
     updatePlan(id, plan, cb){
         setTimeout(() => cb(plan), 100)
+    },
+    createPlan(plan, cb){
+        _plans.push(plan);
+        setTimeout(() => cb(_plans), 100)
     }
 }

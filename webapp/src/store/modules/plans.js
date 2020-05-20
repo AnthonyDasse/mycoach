@@ -10,6 +10,9 @@ const state = () => ({
 const getters = {
     getCurrentPlan: state => {
       return state.currentPlan;
+    },
+    all : state => {
+      return state.plan;
     }
   
 }
@@ -38,6 +41,20 @@ const actions = {
   },
   addEmptyWeek({commit}){
     commit('addEmptyWeek')
+  },
+  createPlan({commit, state}, newPlan) {
+    newPlan.weeks = [];
+    // to delete when backend is coming
+    if(state.all.length > 0){
+      let lastId = state.all.map(plan => plan.id).sort().pop();
+      newPlan.id = lastId + 1;
+    }else{
+      newPlan.id = 1;
+    }
+    
+    plansApi.createPlan(newPlan, plans => {       
+      commit('setPlans', plans)
+    })
   }
 
 }

@@ -13,7 +13,9 @@
     "formSubmitUpdateButton": "Update",
     "editModalFooterText" : "",
     "formLabelCompetitionName": "Competition :",
-    "formLabelCompetitionLocation": "Location :"
+    "formLabelCompetitionLocation": "Location :",
+    "modalCreateTitle": "Create your training plan",
+    "createButtonText": "Create ! "
   },
   "session": {
     "createTitle": "Add sessions to week number : ",
@@ -26,7 +28,7 @@
     "fromDescriptionDuration": "to format : HH:MM:SS",
     "formLabelDistance": "Distance :",
     "formDescriptionDistance": "KM 00.0 (ex : 12.4 or 9.0)",
-    "formLabelElevation": "Height Difference :",
+    "formLabelElevation": "Elevation :",
     "formLabelCircuit": "Circuit :",
     "formLabelDetails": "Details :",
     "formSubmitButton": "Create !",
