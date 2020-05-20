@@ -14,7 +14,6 @@ const getters = {
     all : state => {
       return state.plan;
     }
-  
 }
 
 // actions
@@ -60,7 +59,7 @@ const actions = {
 }
 
 // mutations
-const mutations = {
+export const mutations = {
   setPlans(state, plans) {
     state.all = plans
   },
